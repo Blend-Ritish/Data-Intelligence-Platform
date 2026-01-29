@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'PP Telegraf';
+  src: url('/fonts/PPTelegraf-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 210 20% 85%;
+    --foreground: 208 85% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 208 85% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 208 85% 18%;
+
+    --primary: 180 100% 47%;
+    --primary-foreground: 208 85% 18%;
+
+    --secondary: 208 85% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 208 50% 40%;
+
+    --accent: 180 76% 79%;
+    --accent-foreground: 208 85% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 180 100% 47%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 208 85% 18%;
+    --sidebar-primary: 180 100% 47%;
+    --sidebar-primary-foreground: 208 85% 18%;
+    --sidebar-accent: 180 76% 79%;
+    --sidebar-accent-foreground: 208 85% 18%;
+    --sidebar-border: 210 20% 85%;
+    --sidebar-ring: 180 100% 47%;
+
+    /* Custom tokens - Solid colors for light mode */
+    --gradient-hero: #073155;
+    --gradient-card: #073155;
+    --gradient-overlay: rgba(7, 49, 85, 0.9);
+    --gradient-accent: #073155;
+    --icon-color-light: #073155;
+    --shadow-card: 0 4px 24px -4px rgba(7, 49, 85, 0.1);
+    --shadow-elevated: 0 20px 50px -12px rgba(7, 49, 85, 0.25);
+    --shadow-glow: 0 0 50px rgba(7, 49, 85, 0.3);
+    --shadow-glow-primary: 0 0 40px rgba(7, 49, 85, 0.4);
+  }
+
+  .dark {
+    --background: 208 85% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 208 85% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 208 85% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 180 100% 47%;
+    --primary-foreground: 208 85% 8%;
+
+    --secondary: 208 85% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 208 60% 18%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 180 76% 79%;
+    --accent-foreground: 208 85% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 208 60% 20%;
+    --input: 208 60% 20%;
+    --ring: 180 100% 47%;
+
+    --sidebar-background: 208 85% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 180 100% 47%;
+    --sidebar-primary-foreground: 208 85% 8%;
+    --sidebar-accent: 180 76% 79%;
+    --sidebar-accent-foreground: 208 85% 8%;
+    --sidebar-border: 208 60% 20%;
+    --sidebar-ring: 180 100% 47%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(180 100% 47%) 0%, hsl(180 76% 79%) 50%, hsl(208 85% 18%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(208 85% 14%) 0%, hsl(208 85% 10%) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsla(208 85% 5% / 0.85) 0%, hsla(208 85% 3% / 0.92) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(180 100% 47%) 0%, hsl(180 76% 79%) 100%);
+    --icon-color-light: inherit;
+    --shadow-card: 0 4px 24px -4px hsla(0 0% 0% / 0.4);
+    --shadow-elevated: 0 20px 50px -12px hsla(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 50px hsla(180 76% 79% / 0.2);
+    --shadow-glow-primary: 0 0 40px hsla(180 100% 47% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'PP Telegraf', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .icon-light-mode {
+    color: var(--icon-color-light);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
